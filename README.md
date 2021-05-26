@@ -15,9 +15,8 @@
    7 git init
 
   8 dvc init
-'''bash
+
   9 git add .
-  '''
 
   10 git commit -m "first commit"
 
