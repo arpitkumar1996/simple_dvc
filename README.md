@@ -27,4 +27,20 @@
   13 git branch
 
   14 git push origin main
+
+  15 tox command -
+
+      tox
+      for rebuilding -
+
+      tox -r 
+  16 pytest command
+
+      pytest -v
+   17    setup commands -
+
+      pip install -e . 
+   18 build your own package commands-
+
+      python setup.py sdist bdist_wheel
   
