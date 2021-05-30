@@ -1,5 +1,7 @@
 from flask import Flask, render_template, request, jsonify
 import os
+import yaml
+import joblib
 import numpy as np
 from prediction_service import prediction
 
@@ -7,7 +9,7 @@ from prediction_service import prediction
 webapp_root = "webapp"
 
 static_dir = os.path.join(webapp_root, "static")
-template_dir = os.path.join(webapp_root, "templates")
+template_dir = os.path.join(webapp_root, "template")
 
 app = Flask(__name__, static_folder=static_dir,template_folder=template_dir)
 
@@ -27,10 +29,10 @@ def index():
 
         except Exception as e:
             print(e)
-            error = {"error": "Something went wrong!! Try again later!"}
-            error = {"error": e}
+            #error = {"error": "Something went wrong!! Try again later!"}
+            #error = {"error": e}
 
-            return render_template("404.html", error=error)
+            return render_template("404.html", error=e)
     else:
         return render_template("index.html")
 
